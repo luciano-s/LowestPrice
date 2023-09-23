@@ -10,7 +10,7 @@ from scrapy.http import Request, Response
 class QuerySettingsType(TypedDict):
     query_str_prefix: str
     strings_to_query: list[str]
-    query_str_prefix: list[str]
+    query_str_postfix: list[str]
 
 
 class BaseSpider(scrapy.Spider):
