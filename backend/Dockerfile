@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:latest
+FROM python:3.10.9
 
 # set work directory
 WORKDIR /app
@@ -7,6 +7,9 @@ WORKDIR /app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+
+RUN apt update && apt -y install
+RUN apt -y install python3-dev libpq-dev
 
 # install dependencies
 RUN pip install --upgrade pip
